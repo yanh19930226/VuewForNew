@@ -21,4 +21,12 @@ export default[
     path:'/userinfo',
     component:UserInfo
   },
+  {
+    path:'/',
+    redirect:'/home'
+  },
+  {
+    path:'*',
+    redirect:'/home'
+  }
 ]

@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <NavView></NavView>
+    <NavView v-show="header"></NavView>
     <!-- <HomeView></HomeView> -->
     <router-view class="router-view"></router-view>
     <FootView></FootView>
@@ -10,11 +10,26 @@
 import NavView from './components/Nav.vue'
 import FootView from './components/Footer.vue'
 import HomeView from './components/Home.vue'
+
+import{mapGetters,mapMutations} from 'vuex'
+
 export default {
   name: 'app',
   data() {
     return {
       msg: 'Welcome to Your Vue.js App'
+    }
+  },
+ computed:mapGetters([
+   'getHeaderShow'
+ ]),
+  watch:{
+    $route(to,from){
+      if(to.path=='/userinfo'){
+          this.$store.dispatch('hideHeader');
+      }else {
+        this.$store.dispatch('showHeader');
+      }
     }
   },
   components: {
@@ -23,7 +38,6 @@ export default {
     FootView
   }
 }
-
 </script>
 <style>
 .slide-up-enter-active,
