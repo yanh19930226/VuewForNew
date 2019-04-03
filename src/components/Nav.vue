@@ -4,6 +4,9 @@
         <li class='active'><a href="">首页</a></li>
         <li><a href="">关注</a></li>
         <li><a href="">栏目</a></li>
+        <router-link tag="li" active-class="active">
+             <a href="">首页</a>
+        </router-link>
       </ul>
     </div>
 </template>
