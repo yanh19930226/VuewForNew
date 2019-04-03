@@ -1,14 +1,15 @@
 <template>
   <div id="app">
     <NavView></NavView>
-    <HomeView></HomeView>
+    <!-- <HomeView></HomeView> -->
+    <router-view class="router-view"></router-view>
     <FootView></FootView>
   </div>
 </template>
 <script>
 import NavView from './components/Nav.vue'
-import HomeView from './components/Home.vue'
 import FootView from './components/Footer.vue'
+import HomeView from './components/Home.vue'
 export default {
   name: 'app',
   data() {
