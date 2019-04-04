@@ -1,17 +1,32 @@
-import getters from './getters'
 const state={
-  header:true    
+    headShow:true,
+    loadingShow:false    
 };
 const mutations={
     showHeader(state){
-       state.header=true;
+       state.headShow=true;
     },
     hideHeader(state){
-        state.header=false;
+        state.headShow=false;
+    },
+    showLoading(state){
+        state.loadingShow=true;
+    },
+    hideLoading(state){
+        state.loadingShow=false;
     }
-}
+};
+const getters={
+	headShow(state){
+		return state.headShow;
+    },
+    loadingShow(state){
+		return state.loadingShow;
+    }
+};
+
 export default{
-    getters,
-    state,
-    mutations
+	state,
+	mutations,
+	getters
 }

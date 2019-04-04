@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <NavView v-show="header"></NavView>
-    <!-- <HomeView></HomeView> -->
+    <Loading></Loading>
+    <NavView v-show="headShow"></NavView>
     <router-view class="router-view"></router-view>
     <FootView></FootView>
   </div>
@@ -11,7 +11,7 @@ import NavView from './components/Nav.vue'
 import FootView from './components/Footer.vue'
 import HomeView from './components/Home.vue'
 
-import{mapGetters,mapMutations} from 'vuex'
+import{mapGetters} from 'vuex'
 
 export default {
   name: 'app',
@@ -21,7 +21,8 @@ export default {
     }
   },
  computed:mapGetters([
-   'getHeaderShow'
+   'headShow',
+   'loadingShow'
  ]),
   watch:{
     $route(to,from){
