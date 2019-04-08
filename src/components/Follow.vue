@@ -2,70 +2,10 @@
     <div class="content mt">
       <div class="newsList">
         <ul>
-          <li>
+         <li v-for="(item,index) in list" :key="index">
             <a href="">
-            	<h2>水电费水电费</h2>
-              <p>测试测是测是的范德萨发生的范德萨发斯蒂芬斯蒂芬的说法是的范德萨发斯蒂芬斯蒂芬</p>
-            </a>
-          </li>
-          <li>
-            <a href="">
-            	<h2>水电费水电费</h2>
-              <p>测试测是测是的范德萨发生的范德萨发斯蒂芬斯蒂芬的说法是的范德萨发斯蒂芬斯蒂芬</p>
-            </a>
-          </li>
-          <li>
-            <a href="">
-            	<h2>水电费水电费</h2>
-              <p>测试测是测是的范德萨发生的范德萨发斯蒂芬斯蒂芬的说法是的范德萨发斯蒂芬斯蒂芬</p>
-            </a>
-          </li>
-          <li>
-            <a href="">
-            	<h2>水电费水电费</h2>
-              <p>测试测是测是的范德萨发生的范德萨发斯蒂芬斯蒂芬的说法是的范德萨发斯蒂芬斯蒂芬</p>
-            </a>
-          </li>
-          <li>
-            <a href="">
-            	<h2>水电费水电费</h2>
-              <p>测试测是测是的范德萨发生的范德萨发斯蒂芬斯蒂芬的说法是的范德萨发斯蒂芬斯蒂芬</p>
-            </a>
-          </li>
-          <li>
-            <a href="">
-            	<h2>水电费水电费</h2>
-              <p>测试测是测是的范德萨发生的范德萨发斯蒂芬斯蒂芬的说法是的范德萨发斯蒂芬斯蒂芬</p>
-            </a>
-          </li>
-          <li>
-            <a href="">
-            	<h2>水电费水电费</h2>
-              <p>测试测是测是的范德萨发生的范德萨发斯蒂芬斯蒂芬的说法是的范德萨发斯蒂芬斯蒂芬</p>
-            </a>
-          </li>
-          <li>
-            <a href="">
-            	<h2>水电费水电费</h2>
-              <p>测试测是测是的范德萨发生的范德萨发斯蒂芬斯蒂芬的说法是的范德萨发斯蒂芬斯蒂芬</p>
-            </a>
-          </li>
-          <li>
-            <a href="">
-            	<h2>水电费水电费</h2>
-              <p>测试测是测是的范德萨发生的范德萨发斯蒂芬斯蒂芬的说法是的范德萨发斯蒂芬斯蒂芬</p>
-            </a>
-          </li>
-          <li>
-            <a href="">
-            	<h2>水电费水电费</h2>
-              <p>测试测是测是的范德萨发生的范德萨发斯蒂芬斯蒂芬的说法是的范德萨发斯蒂芬斯蒂芬</p>
-            </a>
-          </li>
-          <li>
-            <a href="">
-            	<h2>水电费水电费</h2>
-              <p>测试测是测是的范德萨发生的范德萨发斯蒂芬斯蒂芬的说法是的范德萨发斯蒂芬斯蒂芬</p>
+            	<h2>{{index+1}} .{{item.title}}</h2>
+              <p>{{item.detail}}</p>
             </a>
           </li>
         </ul>
@@ -74,12 +14,34 @@
 </template>
 <script>
 export default {
-
+  data(){
+    return {
+      list:[]
+    }
+  },
+  mounted(){
+     this.fetchdata();
+  },
+  methods:{
+    fetchdata(){
+        var _this=this;
+				this.$http.get('src/data/index.data').then(function(res){
+						_this.list=res.data;
+				}).catch(function(err){
+					console.log(err);
+				});
+    }
+  }
 
 }
 
 </script>
 <style scoped>
+.mt{
+    margin-top: 30px;
+}
+@import '../assets/css/index.css';
+</style>
 .mt{
     margin-top: 30px;
 }

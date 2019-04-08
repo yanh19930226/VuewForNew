@@ -1,8 +1,12 @@
 <template>
   <div id="app">
-    <Loading></Loading>
+    <Loading v-show="loadingShow"></Loading>
     <NavView v-show="headShow"></NavView>
+    <transition name="slide-down">
+    <keep-alive>
     <router-view class="router-view"></router-view>
+    </keep-alive>
+    </transition>
     <FootView></FootView>
   </div>
 </template>
