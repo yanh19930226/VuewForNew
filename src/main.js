@@ -28,15 +28,11 @@ axios.interceptors.response.use(function (response) {
 });
 
 Vue.prototype.$http = axios  //其他页面在使用axios的时候直接  this.$http就可以了
-
-
 const router=new VueRouter({
   mode:'history',
   scrollBehavior: () => ({ y: 0 }),
   routes:routerConfig
 });
-
-
 new Vue({
   el: '#app',
   router,
