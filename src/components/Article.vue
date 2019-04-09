@@ -1,13 +1,13 @@
 <template>
   <div>
-    <div class="nav">
+    <div class="navarticle">
       <ul>
         <li class="l-btn" onclick="window.history.go(-1)"></li>
       </ul>
     </div>
     <div class="content">
       <div class="header clear">
-        <h2>
+        <h2 >
           <img :src="articleData.author_face" alt>
         </h2>
         <p>你好啊</p>
@@ -87,7 +87,7 @@ html,
 body {
   overflow-x: hidden;
 }
-.nav {
+.navarticle {
   width: 100%;
   position: fixed;
   top: 0;
@@ -96,20 +96,22 @@ body {
   border-bottom: 1px solid #e8eaec;
   z-index: 99;
 }
-.nav ul {
+.navarticle ul {
   width: 6.4rem;
   height: 0.45rem;
   padding-top: 0.15rem;
   margin: 0 auto;
 }
-.nav ul li {
+.navarticle ul li {
   width: 0.29rem;
   height: 0.31rem;
   background: url(../assets/img/history.png) no-repeat 0 0;
   background-size: 100%;
   margin: 0 0 0 0.38rem;
 }
-
+.header>h2>img{
+  width: 20%;
+}
 .content {
   max-width: 6.4rem;
   margin: 0 auto;
@@ -180,7 +182,7 @@ body {
   bottom: 0;
 }
 .foot-btn ul {
-  width: 6.4rem;
+  /* width: 6.4rem; */
   margin: 0 auto;
   height: 0.52rem;
   margin-top: 0.16rem;
