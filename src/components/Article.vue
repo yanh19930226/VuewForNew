@@ -71,7 +71,7 @@ export default {
     fetchData(id) {
       var _this = this;
       this.$http
-        .get("../src/data/article.data")
+        .get("../src/data/article.js")
         .then(function(res) {
           _this.articleData = res.data[id];
         })

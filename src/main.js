@@ -11,6 +11,8 @@ Object.keys(filters).forEach(key => Vue.filter(key, filters[key]))
 Vue.use(VueRouter);
 Vue.use(Loading);
 
+
+
 require('./assets/css/base.css'); //引入全局的base文件
 
 //配置发送请求的信息，发送请求显示loading

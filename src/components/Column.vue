@@ -25,7 +25,7 @@ export default {
   methods:{
     fetchdata(){
         var _this=this;
-				this.$http.get('src/data/index.data').then(function(res){
+				this.$http.get('src/data/index.js').then(function(res){
 						_this.list=res.data;
 				}).catch(function(err){
 					console.log(err);
